@@ -1,0 +1,19 @@
+{
+  "name": "cresvyn-tech-website",
+  "version": "1.0.0",
+  "description": "Cresvyn Tech website + contact backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "nodemailer": "^6.10.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}
