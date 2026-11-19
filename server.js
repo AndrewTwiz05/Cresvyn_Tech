@@ -14,7 +14,11 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
 const PORT = Number(process.env.PORT) || 3000;
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data');
+const DATA_DIR = process.env.VERCEL
+  ? path.join(require("node:os").tmpdir(), "cresvyn-data")
+  : path.join(__dirname, "data");
+
+fs.mkdirSync(DATA_DIR, { recursive: true });
 const MESSAGES_FILE = path.join(DATA_DIR, 'messages.jsonl');
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 const CONTACT_TO = process.env.CONTACT_TO || 'cresvyn.tech@gmail.com';
